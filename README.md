@@ -23,7 +23,9 @@ This repository contains the reproduction package for the paper "Market Unity Am
 │   │   └── validate_setup.py
 │   └── utils/           # Utility functions
 │       ├── common_utils.py
-│       └── data_utils.py
+│       ├── data_utils.py
+│       ├── prepare_data.py          # Data preparation pipeline
+│       └── precomputeSpatialData.py # Spatial data preprocessing
 ├── output/              # Generated outputs
 │   ├── tables/         # Generated tables
 │   └── figures/        # Generated figures
@@ -59,7 +61,13 @@ This repository contains the reproduction package for the paper "Market Unity Am
    python code/tests/test_setup.py
    ```
 
-4. Run analysis scripts in the following order:
+4. Prepare data:
+   ```bash
+   python code/utils/prepare_data.py
+   python code/utils/precomputeSpatialData.py
+   ```
+
+5. Run analysis scripts in the following order:
    ```bash
    # ECM Analysis
    python code/ecm_analysis/ecm_v2.5_directional.py
@@ -82,16 +90,21 @@ This repository contains the reproduction package for the paper "Market Unity Am
 
 ## Analysis Components
 
-1. **Error Correction Model (ECM) Analysis**
+1. **Data Preparation**
+   - Raw data processing and cleaning
+   - Spatial data preprocessing
+   - Feature engineering
+
+2. **Error Correction Model (ECM) Analysis**
    - Directional price transmission between markets
    - Unified market integration assessment
 
-2. **Spatial Analysis**
+3. **Spatial Analysis**
    - Spatial price transmission patterns
    - Time-varying market flows
    - Geographic price dispersion
 
-3. **Price Differential Analysis**
+4. **Price Differential Analysis**
    - Market pair price gap analysis
    - Transaction cost assessment
    - Exchange rate regime effects
