@@ -18,6 +18,9 @@ This repository contains the reproduction package for the paper "Market Unity Am
 │   │   └── data_prepration_for_spatial_chart_v2.py
 │   ├── price_differential/  # Price differential analysis
 │   │   └── price_differential_model_v2.py
+│   ├── tests/           # Setup and validation tests
+│   │   ├── test_setup.py
+│   │   └── validate_setup.py
 │   └── utils/           # Utility functions
 │       ├── common_utils.py
 │       └── data_utils.py
@@ -50,8 +53,13 @@ This repository contains the reproduction package for the paper "Market Unity Am
    pip install -r requirements.txt
    ```
 
-3. Run analysis scripts in the following order:
+3. Run setup validation:
+   ```bash
+   python code/tests/validate_setup.py
+   python code/tests/test_setup.py
+   ```
 
+4. Run analysis scripts in the following order:
    ```bash
    # ECM Analysis
    python code/ecm_analysis/ecm_v2.5_directional.py
@@ -87,6 +95,14 @@ This repository contains the reproduction package for the paper "Market Unity Am
    - Market pair price gap analysis
    - Transaction cost assessment
    - Exchange rate regime effects
+
+## Testing and Validation
+
+The package includes two testing scripts:
+- `test_setup.py`: Verifies the correct installation and configuration of required dependencies
+- `validate_setup.py`: Validates the data structure and environment setup
+
+Run these tests before proceeding with the analysis to ensure proper setup.
 
 ## License
 
